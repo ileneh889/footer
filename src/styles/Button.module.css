@@ -1,0 +1,144 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 200deg;
+  inherits: false;
+}
+
+
+p {
+  letter-spacing: -0.5px;
+  padding: 0;
+  margin: 0;
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  transition: transform 0.4s ease-in-out;
+
+}
+
+.btnOut:hover .content {
+  transform: translatey(100%);
+
+}
+
+.overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform: translatey(-100%);
+  display: grid;
+  place-items: center;
+
+}
+
+.btnOut:hover .overlay {
+  transform: translatey(0);
+
+}
+
+/* btn itself */
+.btnOut {
+  width: 168px;
+  height: 84px;
+  background: linear-gradient(0deg, #e7e7e7, #fffffe);
+  background-color: transparent;
+  border-radius: 100px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+}
+
+/* outter-rim */
+.btnOut::before,
+.btnOut::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background-image: conic-gradient(from var(--gradient-angle),
+      #bd00ff,
+      #bd00ff 20%,
+      #ccff00 35%,
+      #3958fc 55%,
+      #3958fc 70%,
+      #ccff00 85%,
+      #bd00ff 100%);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* outter-hue */
+.btnOut::before {
+  filter: blur(1.7rem);
+  opacity: 0.35;
+
+}
+
+/* 移除初始動畫，只有在hover時才應用動畫 */
+.btnOut:hover::before,
+.btnOut:hover::after {
+  animation: rotation 0.8s ease forwards;
+
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 200deg;
+
+  }
+
+  100% {
+    --gradient-angle: 100deg;
+
+  }
+}
+
+/* 移除非hover時的動畫，避免初始加載時的動畫 */
+.btnOut.animated:not(:hover)::before,
+.btnOut.animated:not(:hover)::after {
+  animation: resetRotation 0.8s ease forwards;
+
+}
+
+@keyframes resetRotation {
+  0% {
+    --gradient-angle: 100deg;
+
+  }
+
+  100% {
+    --gradient-angle: 200deg;
+
+  }
+
+
+}
+
+/* btn-inside */
+.btnIn {
+  border-radius: inherit;
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background: linear-gradient(180deg, #e8e8e8, #fffffe);
+  overflow: hidden;
+
+}
+
+.btnIn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #e8e8e8 0%, transparent 40%, transparent 60%, #fffffe 100%);
+
+}

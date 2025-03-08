@@ -1,0 +1,110 @@
+/* ///////////////form related////////////// */
+
+.content h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.content h4 {
+  color: #494706;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+}
+
+.content {
+  z-index: 1;
+}
+
+.content h2 {
+  line-height: 48px;
+}
+
+.content h4 {
+  line-height: 50px;
+  letter-spacing: -0.5px;
+}
+
+.inputBox {
+  margin-top: 35px;
+  display: flex;
+  width: 100%;
+  height: 104px;
+  position: relative;
+  align-items: center;
+}
+
+.emailBox {
+  width: 100%;
+  height: 100%;
+  border-radius: 70px;
+  padding-inline: 25px;
+  outline: none;
+  background-color: white;
+  border-color: black;
+  border-width: 3px 8px 3px 8px;
+}
+
+
+.emailBox:focus {
+  outline: yellow;
+
+}
+
+.btnBox {
+  position: absolute;
+  right: 20px;
+  justify-content: center;
+}
+
+/* //////////////yellow cross background/////////////////*/
+.box {
+  /* 背景顏色 */
+  background-color: yellow;
+
+  /* 尺寸 */
+  width: 100vw;
+  height: 400px;
+
+  /*  mask  */
+  --mask: radial-gradient(26.91px at 50% 38px, #000 99%, #0000 101%) calc(50% - 40px) 0/80px 51% repeat-x,
+    radial-gradient(26.91px at 50% -18px, #0000 99%, #000 101%) 50% 20px/80px calc(51% - 20px) repeat-x,
+    radial-gradient(26.91px at 50% calc(100% - 38px), #000 99%, #0000 101%) calc(50% - 40px) 100%/80px 51% repeat-x,
+    radial-gradient(26.91px at 50% calc(100% + 18px), #0000 99%, #000 101%) 50% calc(100% - 20px) / 80px calc(51% - 20px) repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.box::after {
+  content: "";
+  background-color: rgba(252, 252, 255, 0);
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to right,
+      rgba(0, 0, 0, 0.1) 1px,
+      rgba(252, 252, 255, 0) 1px);
+  background-size: 60px 60px;
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom,
+      yellow 15%,
+      transparent,
+      yellow 85%);
+  z-index: -2;
+}
