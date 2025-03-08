@@ -34,12 +34,10 @@ p {
   transform: translatey(-100%);
   display: grid;
   place-items: center;
-
 }
 
 .btnOut:hover .overlay {
   transform: translatey(0);
-
 }
 
 /* btn itself */
@@ -77,7 +75,6 @@ p {
 .btnOut::before {
   filter: blur(1.7rem);
   opacity: 0.35;
-
 }
 
 /* 移除初始動畫，只有在hover時才應用動畫 */
@@ -90,12 +87,10 @@ p {
 @keyframes rotation {
   0% {
     --gradient-angle: 200deg;
-
   }
 
   100% {
     --gradient-angle: 100deg;
-
   }
 }
 
@@ -109,12 +104,10 @@ p {
 @keyframes resetRotation {
   0% {
     --gradient-angle: 100deg;
-
   }
 
   100% {
     --gradient-angle: 200deg;
-
   }
 
 
@@ -130,13 +123,11 @@ p {
   right: 8px;
   background: linear-gradient(180deg, #e8e8e8, #fffffe);
   overflow: hidden;
-
 }
 
 .btnIn::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #e8e8e8 0%, transparent 40%, transparent 60%, #fffffe 100%);
-
+  background: linear-gradient(180deg, #e8e8e8 0%, transparent 45%, transparent 55%, #fffffe 100%);
 }
