@@ -17,7 +17,7 @@ form {
 }
 
 .content {
-  z-index: 1;
+  z-index: -4;
 }
 
 .content h2 {
@@ -47,12 +47,12 @@ form {
   background-color: white;
   border-color: black;
   border-width: 3px 8px 3px 8px;
+  z-index: -3;
 }
 
 
 .emailBox:focus {
   outline: yellow;
-
 }
 
 .btnBox {
@@ -95,7 +95,7 @@ form {
   background-size: 60px 60px;
   position: absolute;
   inset: 0;
-  z-index: -3;
+  z-index: -5;
 }
 
 .box::before {
@@ -106,5 +106,5 @@ form {
       yellow 15%,
       transparent,
       yellow 85%);
-  z-index: -2;
+  z-index: -4;
 }

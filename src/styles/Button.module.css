@@ -19,7 +19,6 @@ p {
   place-items: center;
   border-radius: inherit;
   transition: transform 0.4s ease-in-out;
-
 }
 
 .btnOut:hover .content {
@@ -54,7 +53,6 @@ p {
   display: grid;
   place-items: center;
   cursor: pointer;
-
 }
 
 /* outter-rim */
